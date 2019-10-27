@@ -11,5 +11,7 @@ public enum GameState {
     ABNORMAL_ADD_A_OVER,
     ABNORMAL_REDUCE_A,
     DROP_END,
+    YES,
+    NO,
     END
 }

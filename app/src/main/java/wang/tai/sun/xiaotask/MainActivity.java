@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ConfModle confModle = mGson.fromJson(fileReader, ConfModle.class);
             if (checkDataFormat(confModle)) {
                 CofUtils.candyModleList = allCandyModleList;
+                CofUtils.GameType = confModle.type;
                 mConfBtn.setVisibility(View.GONE);
                 gameSurfaceView.onStart();
             } else {
