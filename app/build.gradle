@@ -27,6 +27,16 @@ android {
             signingConfig signingConfigs.sankuai
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk') && outputFile.name.contains('release')) {
+                def fileName = "xiaotask_${variant.name}_v${defaultConfig.versionName}.apk"
+                outputFileName = fileName
+            }
+        }
+    }
 }
 
 dependencies {
