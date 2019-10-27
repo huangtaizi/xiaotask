@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 游戏中的颜色 -->
+    <color name="background">#FFFFFF</color>
+    <color name="candy_a">#FFFF00</color>
+    <color name="candy_b">#00B0F0</color>
+</resources>
