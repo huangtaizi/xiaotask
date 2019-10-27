@@ -1,5 +1,6 @@
 package wang.tai.sun.xiaotask;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static Gson mGson;
     private List<CandyModle> allCandyModleList;
 
+    private MediaPlayer mMediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CofUtils.GameType = confModle.type;
                 mConfBtn.setVisibility(View.GONE);
                 gameSurfaceView.onStart();
+
+                // TODO: 2019/10/27 播放bgm有问题
+//                Intent intent = new Intent(MainActivity.this, MusicIntentService.class);
+//                String action = MusicIntentService.ACTION_MUSIC;
+//                intent.setAction(action);
+//                startService(intent);
             } else {
                 allCandyModleList.clear();
             }

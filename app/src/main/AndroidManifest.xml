@@ -21,13 +21,16 @@
             android:name=".MainActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.FullScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".service.MusicIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
