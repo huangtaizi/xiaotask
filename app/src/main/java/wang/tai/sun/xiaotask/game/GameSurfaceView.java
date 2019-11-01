@@ -79,6 +79,8 @@ public class GameSurfaceView extends SurfaceView implements GameContract.View, S
     private CandyModle mCurrentCandyModle;
     private int mCurrentCandyPoint = -1;
 
+    private boolean isInitGameSucess = false;
+
     SoundPool mSoundPool;
     private Handler mMusicHandle = new Handler();
     SparseIntArray mSoundMap = new SparseIntArray();
@@ -146,11 +148,26 @@ public class GameSurfaceView extends SurfaceView implements GameContract.View, S
 
     @Override
     public void onStart() {
-        if (initGame()) {
+        isInitGameSucess = initGame();
+        if (isInitGameSucess) {
             mDrawFlag = true;
             mDrawThread = new Thread(new DrawRunnalbe());
             mDrawThread.start();
         }
+    }
+
+    @Override
+    public void onResume() {
+        if (isInitGameSucess) {
+            mDrawFlag = true;
+            mDrawThread = new Thread(new DrawRunnalbe());
+            mDrawThread.start();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        mDrawFlag = false;
     }
 
     @Override
@@ -218,7 +235,6 @@ public class GameSurfaceView extends SurfaceView implements GameContract.View, S
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        mDrawFlag = false;
         mSoundPool.release();
     }
 
@@ -296,7 +312,7 @@ public class GameSurfaceView extends SurfaceView implements GameContract.View, S
                 mNO.onGameDraw(canvas, paint);
                 break;
             case END:
-                // TODO: 2019/10/19 未知
+                mBackground.onGameEnd(canvas, paint);
                 break;
             default:
                 break;

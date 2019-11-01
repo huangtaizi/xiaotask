@@ -35,7 +35,7 @@ public class FlyCandy extends BaseElement {
         mBottomPoint = bottomPoint;
         mCandyNum = num;
         mRangeSize = rangeSize;
-        upSpeen = (bottomPoint + rangeSize) / 24;
+        upSpeen = (bottomPoint + rangeSize) / 35;
     }
 
     @Override

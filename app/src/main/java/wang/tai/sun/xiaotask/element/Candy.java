@@ -52,7 +52,7 @@ public class Candy extends BaseElement {
         mBottomLimit = bottomLimit;
         initPoint();
 
-        drowSpeen = (bottomLimit - topPoint - rangeSize) / 24;
+        drowSpeen = (bottomLimit - topPoint - rangeSize) / 10;
         Log.d("suntaiwang", "candy drowSpeen=" + drowSpeen);
     }
 

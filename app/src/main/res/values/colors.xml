@@ -8,4 +8,5 @@
     <color name="background">#FFFFFF</color>
     <color name="candy_a">#FFFF00</color>
     <color name="candy_b">#00B0F0</color>
+    <color name="back_text">#DC143C</color>
 </resources>

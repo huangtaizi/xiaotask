@@ -1,6 +1,7 @@
 package wang.tai.sun.xiaotask;
 
-import android.media.MediaPlayer;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import java.util.List;
 import wang.tai.sun.xiaotask.game.GameContract;
 import wang.tai.sun.xiaotask.model.CandyModle;
 import wang.tai.sun.xiaotask.model.ConfModle;
+import wang.tai.sun.xiaotask.service.MusicIntentService;
 import wang.tai.sun.xiaotask.utils.CofUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,11 +31,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static Gson mGson;
     private List<CandyModle> allCandyModleList;
 
-    private MediaPlayer mMediaPlayer;
+    private boolean isStartGame = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //隐藏虚拟按键，并且全屏
+        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+            View v = this.getWindow().getDecorView();
+            v.setSystemUiVisibility(View.GONE);
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            //for new api versions.
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
+
         setContentView(R.layout.activity_main);
         gameSurfaceView = findViewById(R.id.game_surface);
         gameSurfaceView.onCreate();
@@ -43,6 +58,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mGson = new Gson();
         allCandyModleList = new ArrayList<>();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gameSurfaceView.onResume();
+
+        if (isStartGame) {
+            Intent intent = new Intent(MainActivity.this, MusicIntentService.class);
+            intent.setAction(MusicIntentService.ACTION_MUSIC_START);
+            startService(intent);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gameSurfaceView.onPause();
+
+        if (isStartGame) {
+            Intent intent = new Intent(MainActivity.this, MusicIntentService.class);
+            intent.setAction(MusicIntentService.ACTION_MUSIC_STOP);
+            startService(intent);
+        }
     }
 
     @Override
@@ -57,12 +96,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CofUtils.GameType = confModle.type;
                 mConfBtn.setVisibility(View.GONE);
                 gameSurfaceView.onStart();
-
-                // TODO: 2019/10/27 播放bgm有问题
-//                Intent intent = new Intent(MainActivity.this, MusicIntentService.class);
-//                String action = MusicIntentService.ACTION_MUSIC;
-//                intent.setAction(action);
-//                startService(intent);
+                isStartGame = true;
+                if (isStartGame) {
+                    Intent intent = new Intent(MainActivity.this, MusicIntentService.class);
+                    intent.setAction(MusicIntentService.ACTION_MUSIC_START);
+                    startService(intent);
+                }
             } else {
                 allCandyModleList.clear();
             }
@@ -230,6 +269,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (candyModle.sizeReduce <= 0) {
                 Toast.makeText(this, toastText + "中第 " + i + " 个糖果未配置 sizeReduce 异常", Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+            if (candyModle.a < candyModle.reduce) {
+                Toast.makeText(this, toastText + "中第 " + i + " 个糖果 a < reduce 异常", Toast.LENGTH_LONG).show();
                 return false;
             }
         }

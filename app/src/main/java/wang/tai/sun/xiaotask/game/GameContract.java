@@ -7,6 +7,10 @@ public class GameContract {
 
         void onStart();
 
+        void onResume();
+
+        void onPause();
+
     }
 
     public interface Presenter {

@@ -15,7 +15,7 @@ public class ReduceFairy extends BaseElement {
         mTopPoint = topPoint;
         mLeftPoint = leftPoint;
         initPoint();
-        upSpeen = (mTopPoint + rangeSize) / 24;
+        upSpeen = (mTopPoint + rangeSize) / 35;
 
         Log.d("suntaiwang", "candy upSpeen=" + upSpeen);
     }

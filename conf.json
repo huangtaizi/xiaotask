@@ -7,38 +7,10 @@
 		"sizeB": 400,
 		"add": 20,
 		"sizeAdd": 400
-	}, {
-		"a": 40,
-		"b": 20,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 27,
-		"b": 54,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
 	}],
 	"thanTwoAdd": [{
 		"a": 14,
 		"b": 21,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 29,
-		"b": 44,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 32,
-		"b": 48,
 		"sizeA": 400,
 		"sizeB": 400,
 		"add": 20,
@@ -51,38 +23,10 @@
 		"sizeB": 400,
 		"add": 20,
 		"sizeAdd": 400
-	}, {
-		"a": 25,
-		"b": 31,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 36,
-		"b": 45,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
 	}],
 	"thanFourAdd": [{
 		"a": 18,
 		"b": 21,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 39,
-		"b": 46,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 30,
-		"b": 35,
 		"sizeA": 400,
 		"sizeB": 400,
 		"add": 20,
@@ -95,38 +39,10 @@
 		"sizeB": 400,
 		"add": 20,
 		"sizeAdd": 400
-	}, {
-		"a": 23,
-		"b": 26,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 38,
-		"b": 33,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
 	}],
 	"thanSixAdd": [{
 		"a": 10,
 		"b": 11,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 22,
-		"b": 24,
-		"sizeA": 400,
-		"sizeB": 400,
-		"add": 20,
-		"sizeAdd": 400
-	}, {
-		"a": 34,
-		"b": 37,
 		"sizeA": 400,
 		"sizeB": 400,
 		"add": 20,
@@ -137,21 +53,7 @@
 		"b": 30,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 40,
-		"b": 20,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 27,
-		"b": 54,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}],
 	"thanTwoReduce": [{
@@ -159,21 +61,7 @@
 		"b": 21,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 29,
-		"b": 44,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 32,
-		"b": 48,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}],
 	"thanThreeReduce": [{
@@ -181,21 +69,7 @@
 		"b": 13,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 25,
-		"b": 31,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 36,
-		"b": 45,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}],
 	"thanFourReduce": [{
@@ -203,21 +77,7 @@
 		"b": 21,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 39,
-		"b": 46,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 30,
-		"b": 35,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}],
 	"thanFiveReduce": [{
@@ -225,21 +85,7 @@
 		"b": 19,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 23,
-		"b": 26,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 38,
-		"b": 33,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}],
 	"thanSixReduce": [{
@@ -247,21 +93,7 @@
 		"b": 11,
 		"sizeA": 400,
 		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 22,
-		"b": 24,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
-		"sizeReduce": 400
-	}, {
-		"a": 34,
-		"b": 37,
-		"sizeA": 400,
-		"sizeB": 400,
-		"reduce": 20,
+		"reduce": 2,
 		"sizeReduce": 400
 	}]
 }
