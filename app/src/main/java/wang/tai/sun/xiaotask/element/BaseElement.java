@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import wang.tai.sun.xiaotask.game.GameSurfaceView;
@@ -30,7 +29,6 @@ public abstract class BaseElement {
         mRes = surfaceView.getResources();
         mScreenWidth = surfaceView.getWidth();
         mScreenHeight = surfaceView.getHeight();
-        Log.d("suntaiwang", "width:" + mScreenWidth + " height:" + mScreenHeight);
     }
 
     protected void initBitmap(int bitmapRes) {
