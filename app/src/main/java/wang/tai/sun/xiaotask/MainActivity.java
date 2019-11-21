@@ -5,9 +5,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -27,6 +30,8 @@ import wang.tai.sun.xiaotask.utils.CofUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private GameContract.View gameSurfaceView;
+    private LinearLayout mConfLL;
+    private EditText mUserIdET;
     private Button mConfBtn;
     public static Gson mGson;
     private List<CandyModle> allCandyModleList;
@@ -53,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gameSurfaceView = findViewById(R.id.game_surface);
         gameSurfaceView.onCreate();
 
+        mConfLL = findViewById(R.id.ll_conf);
+
+        mUserIdET = findViewById(R.id.et_user_id);
         mConfBtn = findViewById(R.id.btn_conf);
         mConfBtn.setOnClickListener(this);
 
@@ -91,10 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             FileReader fileReader = new FileReader(confFile);
             ConfModle confModle = mGson.fromJson(fileReader, ConfModle.class);
-            if (checkDataFormat(confModle)) {
+            String userID = mUserIdET.getText().toString();
+            if (checkDataFormat(confModle) && checkUserID(userID)) {
                 CofUtils.candyModleList = allCandyModleList;
                 CofUtils.GameType = confModle.type;
-                mConfBtn.setVisibility(View.GONE);
+                CofUtils.userID = userID;
+                mConfLL.setVisibility(View.GONE);
                 gameSurfaceView.onStart();
                 isStartGame = true;
                 if (isStartGame) {
@@ -109,6 +119,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "配置文件找不到", Toast.LENGTH_LONG).show();
             allCandyModleList.clear();
         }
+    }
+
+    private boolean checkUserID(String userID) {
+        if (TextUtils.isEmpty(userID)) {
+            Toast.makeText(this, "请输入用户ID", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 
     private boolean checkDataFormat(ConfModle confModle) {

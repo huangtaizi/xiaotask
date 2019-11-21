@@ -10,4 +10,6 @@ public class CofUtils {
     public static List<CandyModle> candyModleList;
 
     public static int GameType;
+
+    public static String userID;
 }

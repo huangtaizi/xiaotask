@@ -466,7 +466,7 @@ public class GameSurfaceView extends SurfaceView implements GameContract.View, S
         Log.d("suntaiwang", "开始保存结果");
         String resultJson = MainActivity.mGson.toJson(CofUtils.candyModleList);
         SimpleDateFormat format = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-        String fileName = format.format(new Date()) + ".json";
+        String fileName = format.format(new Date()) + "-" + CofUtils.userID + ".json";
         Log.d("suntaiwang", "fileName=" + fileName);
         File resultFile = new File(Environment.getExternalStorageDirectory(), fileName);
         FileWriter fileWriter = null;

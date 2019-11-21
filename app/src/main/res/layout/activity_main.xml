@@ -10,11 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/btn_conf"
+    <LinearLayout
+        android:id="@+id/ll_conf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="更新配置" />
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_user_id"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="实验者编号ID" />
+
+        <Button
+            android:id="@+id/btn_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="更新配置" />
+    </LinearLayout>
 
 </RelativeLayout>
