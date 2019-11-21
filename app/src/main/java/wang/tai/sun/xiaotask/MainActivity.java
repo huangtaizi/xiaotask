@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             FileReader fileReader = new FileReader(confFile);
             ConfModle confModle = mGson.fromJson(fileReader, ConfModle.class);
-            String userID = mUserIdET.getText().toString();
+            String userID = mUserIdET.getText().toString().trim();
+            Log.d("suntaiwang", "userID:" + userID);
             if (checkDataFormat(confModle) && checkUserID(userID)) {
                 CofUtils.candyModleList = allCandyModleList;
                 CofUtils.GameType = confModle.type;
